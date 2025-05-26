@@ -1,6 +1,7 @@
 import React from 'react';
 import Meal from './components/Meal';
 import style from './meal.module.css'
+import Image from 'next/image';
 // const fetchMeal = async (search) => {
 //     const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
 //     const data = await res.json()
@@ -32,6 +33,7 @@ const page = async ({ searchParams }) => {
                 {
                     meals && meals?.map((meal, indx) =>
                         <div key={indx} className='p-2 border'>
+                            <Image width={641} height={641} src={meal?.strMealThumb} alt={meal?.strMeal} />
                             <p className='title'>{meal?.strMeal}</p>
                             <p className={`${style["privateTitle"]}`}>{meal?.strInstructions}</p>
                         </div>)
