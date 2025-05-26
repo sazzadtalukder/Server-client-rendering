@@ -6,8 +6,8 @@ const Page =async () => {
         cache: 'force-cache'
     })
     const data = await res.json();
-    if(data.length >3)
-    redirect('/')
+    // if(data.length >3)
+    // redirect('/')
     return (
         <div>
             <p>All Products</p>
