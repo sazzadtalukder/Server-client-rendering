@@ -7,6 +7,7 @@ export async function GET() {
 }
 export async function POST(req) {
   const postedData = await req.json()
+  const result = await dbConnect('practice_data').insertOne(postedData)
  
-  return Response.json({ postedData})
+  return Response.json(result)
 }
